@@ -46,32 +46,38 @@ A dynamic array is an array that can change size during runtime. Unlike static a
 # Key Operations
 
 You can initialize a dynamic array (list) in Python with or without initial elements.
+
                 Create an empty list
                                     dynamic_array = []
                 Create a list with initial elements
                                     dynamic_array = [1, 2, 3]                    
 
 You can add elements to the end of the list using the 'append' method.
+
                                     dynamic_array = []
                                     dynamic_array.append(10)
                                     dynamic_array.append(20)
 
 You can insert elements at a specific position using the 'insert' method.
+
                                     dynamic_array = [10, 30]
                                     dynamic_array.insert(1, 20)
 
 You can remove elements from the list using the 'remove' method or the 'pop' method.
-#               remove
+
+               remove
                                     dynamic_array = [10, 20, 30]
                                     dynamic_array.remove(20)
-#               pop      
+               pop      
                                     dynamic_array.pop(1)
 
 You can access elements using their index.
+
                                     dynamic_array = [10, 20, 30]
                                     value = dynamic_array[1]
 
 You can find out the number of elements in the list using the 'len' function.
+
                                     dynamic_array = [10, 20, 30]
                                     length = len(dynamic_array)
 
