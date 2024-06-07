@@ -85,8 +85,10 @@ You can find out the number of elements in the list using the 'len' function.
 
 Initial allocation: 
     When you create a list, Python allocates a certain amount of memory for it. This initial allocation can hold a fixed number of elements.
+
 Resizing:
     When you add more elements than the currently allocated space can hold, Python automatically allocates a larger chunk of memory, copies the existing elements to this new space, and then adds the new elements. This process is known as dynamic resizing. The new allocated space is usually larger than the previous space to reduce the number of resizes needed.
+
 Time Complexity:
     While resizing an array has a cost, the average time complexity of appending an element is still O(1). This is because resizing doesn't happen with every append operation but rather at specific points when the allocated space is exceeded.
 
