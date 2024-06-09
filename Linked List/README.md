@@ -100,11 +100,13 @@ Using LinkedList Class:
 # Advantages & Disadvantages
 
 Advantages:
+
     Dynamic Size: Can grow and shrink during runtime by allocating and deallocating memory.
     Ease of Insertion/Deletion: Adding or removing nodes is easier compared to arrays, especially for large lists.
 
 
 Disadvantages:
+
     Memory Usage: Requires extra memory for storing references.
     Sequential Access: Accessing elements is slower as it requires traversing from the head to the desired node.
 
