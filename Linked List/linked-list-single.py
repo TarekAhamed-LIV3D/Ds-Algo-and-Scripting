@@ -47,6 +47,24 @@ class LinkedList:
                 break
             itr = itr.next
             count += 1
+            
+    def __insert_at__(self, index, data):
+        if index < 0 or index>=self.__get_length__():
+            raise Exception("This is  not a valid index")
+        
+        if index == 0:
+            self.__insert_at_begining__(data)
+            return
+
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index - 1:
+                node = Node(data, itr.next)
+                itr.next = node
+                break  
+            itr = itr.next
+            count += 1
         
     def __print__(self):
         if self.head is None:
@@ -94,6 +112,10 @@ if __name__ == '__main__':
     print("Length of the list = ", ll.__get_length__())
     ll.__delete_at__(0)
     print("-----List after deletation-----")
+    ll.__print__()
+    print("Length of the list = ", ll.__get_length__())
+    print("-----List after adding-----")
+    ll.__insert_at__(0,"Don't")
     ll.__print__()
     print("Length of the list = ", ll.__get_length__())
     
