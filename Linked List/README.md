@@ -5,6 +5,8 @@ A linked list is a linear data structure where elements are not stored in contig
     Data: The value stored in the node.
     Reference: A pointer or reference to the next node in the sequence.
 
+### Singly linked list
+
 In a singly linked list, each node points to the next node, and the last node points to None, indicating the end of the list.
 
 # Structure of a Singly Linked List
@@ -111,3 +113,7 @@ Disadvantages:
     Sequential Access: Accessing elements is slower as it requires traversing from the head to the desired node.
 
 ## Linked list are used in various applications and form the basis for more complex data structures like stacks, queues, and graph adjacency lists.
+
+
+### Double linked list
+

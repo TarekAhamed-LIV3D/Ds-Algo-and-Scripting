@@ -118,4 +118,3 @@ if __name__ == '__main__':
     ll.__insert_at__(0,"Don't")
     ll.__print__()
     print("Length of the list = ", ll.__get_length__())
-    
