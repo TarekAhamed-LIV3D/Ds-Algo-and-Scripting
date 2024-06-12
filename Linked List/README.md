@@ -36,14 +36,14 @@ Traversal:
 
 # Implementing a Singly Linked List
 
-Using Node Class:
+    Node Class:
 
                                     class Node:
                                         def __init__(self, data):
                                             self.data = data
                                             self.next = None
 
-Using LinkedList Class:
+    LinkedList Class:
 
                                     class LinkedList:
                                         def __init__(self):
@@ -112,8 +112,86 @@ Disadvantages:
     Memory Usage: Requires extra memory for storing references.
     Sequential Access: Accessing elements is slower as it requires traversing from the head to the desired node.
 
-## Linked list are used in various applications and form the basis for more complex data structures like stacks, queues, and graph adjacency lists.
+## Single Linked list are used in various applications and form the basis for more complex data structures like stacks, queues, and graph adjacency lists.
 
 
 ### Double linked list
 
+A doubly linked list is an extension of a singly linked list where each node contains a reference to both the next node and the previous node. This allows for more efficient insertions and deletions from both ends of the list, as well as easier traversal in both directions.
+
+## Structure of a Doubly Linked List
+
+    Data: The value stored in the node.
+    Next: A reference to the next node in the list.
+    Previous: A reference to the previous node in the list.
+
+        head <-> [prev | data | next] <-> [prev | data | next] <-> ... <-> [prev | data | next] <-> None
+
+# Basic operation 
+
+    Insertion: At the beginning, At the end, In the middle
+    Deletion: From the beginning, From the end, From the middle
+    Traversal: Forward traversal, Backward traversal
+
+    Node Class:
+                                    class Node:
+                                        def __init__(self, data=None):
+                                            self.data = data
+                                            self.next = None
+                                            self.prev = None
+
+    LinkedList Class:
+                                    class DoublyLinkedList:
+                                        def __init__(self):
+                                            self.head = None
+
+                                        def insert_at_beginning(self, data):
+                                            new_node = Node(data)
+                                            new_node.next = self.head
+
+                                            if self.head is not None:
+                                                self.head.prev = new_node
+
+                                            self.head = new_node
+
+                                        def insert_at_end(self, data):
+                                            new_node = Node(data)
+                                            if self.head is None:
+                                                self.head = new_node
+                                                return
+
+                                            last = self.head
+                                            while last.next:
+                                                last = last.next
+
+                                            last.next = new_node
+                                            new_node.prev = last
+
+                                        def delete_node(self, node):
+                                            if self.head is None or node is None:
+                                                return
+
+                                            if self.head == node:
+                                                self.head = node.next
+
+                                            if node.next is not None:
+                                                node.next.prev = node.prev
+
+                                            if node.prev is not None:
+                                                node.prev.next = node.next
+
+                                            node = None
+
+# Advantages & Disadvantages
+
+Advantages:
+
+    Bidirectional Traversal: Easy to traverse in both directions.
+    Efficient Insertions/Deletions: Easier to insert and delete nodes from both ends and from the middle.
+    
+Disadvantages:
+
+    Memory Usage: Requires extra memory for storing the previous pointer.
+    Complexity: More complex than singly linked lists due to additional pointers.
+
+## Understanding doubly linked lists is crucial for mastering data structures, as they provide more flexibility and efficiency for certain operations compared to singly linked lists.
