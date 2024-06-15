@@ -195,3 +195,5 @@ Disadvantages:
     Complexity: More complex than singly linked lists due to additional pointers.
 
 ## Understanding doubly linked lists is crucial for mastering data structures, as they provide more flexibility and efficiency for certain operations compared to singly linked lists.
+
+
