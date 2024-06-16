@@ -49,8 +49,20 @@ class DoubleLinkedList:
             curl = curl.next
         
     
-    def add_befor_node(self, key,data):
-        pass
+    def add_before_node(self, key, data):
+        curl = self.head
+        while curl:
+            if curl.prev is None and curl.data == key:
+                self.__prepend__(data)
+                return
+            elif curl.data == key:
+                new_node = Node(data)
+                prev = curl.prev
+                prev.next = new_node
+                curl.prev = new_node
+                new_node.next = curl 
+                new_node.prev = prev
+            curl = curl.next
     
     def __print__(self):
         curl = self.head
@@ -91,4 +103,9 @@ dll.add_after_node(10, 11)
 dll.add_after_node(20, 22)
 dll.add_after_node(1000, 333)
 print("Linked list after adding nodes...")
+dll.printlist()
+dll.add_before_node(10, 11)
+dll.add_before_node(20, 22)
+dll.add_before_node(1000, 333)
+print("Linked list before adding nodes...")
 dll.printlist()
